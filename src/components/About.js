@@ -1,14 +1,24 @@
 import React from "react";
 
-function About() {
-  return (
-    <div id="about">
-      <h2>About Me</h2>
-      <p>Put the bio in here</p>
-      <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
-    </div>
-  );
+import Links from "./Links";
+
+
+function About(props) {
+  function propsReturn(){
+    if(props.bio){
+      return <p>{props.bio}</p>
+    } else {
+      return null;
+    }
+  }
+    return (
+      <div id="about">
+        <h2>About Me</h2>
+        {propsReturn()}
+        <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
+        <Links />
+      </div>
+    );
 }
 
 export default About;
